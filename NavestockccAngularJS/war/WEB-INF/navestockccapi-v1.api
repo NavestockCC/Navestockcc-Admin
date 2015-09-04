@@ -1,0 +1,746 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://navestockcc-002.appspot.com/_ah/api",
+  "name" : "navestockccapi",
+  "version" : "v1",
+  "description" : "An API to manage Navestock Cricket Club",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://navestockcc-002.appspot.com/_ah/spi",
+    "deadline" : 65.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "ownerDomain" : "navestockcc-002.appspot.com",
+  "ownerName" : "navestockcc-002.appspot.com",
+  "methods" : {
+    "navestockccapi.club.all" : {
+      "path" : "ClubAll",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com" ],
+      "clientIds" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com", "replace this with your Android client ID", "replace this with your iOS client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.nacestockcc.clubsteams.ClubServices.ClubAll",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "navestockccapi.club.getclub" : {
+      "path" : "club/{clubId}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com" ],
+      "clientIds" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com", "replace this with your Android client ID", "replace this with your iOS client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.nacestockcc.clubsteams.ClubServices.getClub",
+      "request" : {
+        "parameters" : {
+          "clubId" : {
+            "type" : "int32",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "navestockccapi.club.allTeams" : {
+      "path" : "TeamAll",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com" ],
+      "clientIds" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com", "replace this with your Android client ID", "replace this with your iOS client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.nacestockcc.clubsteams.ClubServices.TeamAll",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "navestockccapi.club.teamsPerClub" : {
+      "path" : "TeamPerClub/{clubId}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com" ],
+      "clientIds" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com", "replace this with your Android client ID", "replace this with your iOS client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.nacestockcc.clubsteams.ClubServices.TeamPerClub",
+      "request" : {
+        "parameters" : {
+          "clubId" : {
+            "type" : "int32",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "navestockccapi.match.get" : {
+      "path" : "FixtureServicesFixture/{matchid}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com" ],
+      "clientIds" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com", "replace this with your Android client ID", "replace this with your iOS client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.navestockcc.fixtures.FixtureServices.FixtureServicesFixture",
+      "request" : {
+        "parameters" : {
+          "matchid" : {
+            "type" : "int32",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "navestockccapi.match.updateresult" : {
+      "path" : "fixture",
+      "httpMethod" : "PUT",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com" ],
+      "clientIds" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com", "replace this with your Android client ID", "replace this with your iOS client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.navestockcc.fixtures.FixtureServices.updateResult",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "navestockccapi.match.all" : {
+      "path" : "FixtureServicesAll/{teamId}/{matchYear}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com" ],
+      "clientIds" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com", "replace this with your Android client ID", "replace this with your iOS client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.navestockcc.fixtures.FixtureServices.FixtureServicesAll",
+      "request" : {
+        "parameters" : {
+          "teamId" : {
+            "type" : "int32",
+            "required" : true
+          },
+          "matchYear" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "navestockccapi.matchReport.add" : {
+      "path" : "addMatchReport/{matchReport}/{idMatch}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com" ],
+      "clientIds" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com", "replace this with your Android client ID", "replace this with your iOS client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.navestockcc.matchreport.MatchReportService.addMatchReport",
+      "request" : {
+        "parameters" : {
+          "matchReport" : {
+            "type" : "string",
+            "required" : true
+          },
+          "idMatch" : {
+            "type" : "int32",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "navestockccapi.matchReport.get" : {
+      "path" : "matchreport/{matchid}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com" ],
+      "clientIds" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com", "replace this with your Android client ID", "replace this with your iOS client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.navestockcc.matchreport.MatchReportService.getMatchReport",
+      "request" : {
+        "parameters" : {
+          "matchid" : {
+            "type" : "int32",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "navestockccapi.player.playerlist" : {
+      "path" : "playercollection",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com" ],
+      "clientIds" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com", "replace this with your Android client ID", "replace this with your iOS client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.navestockcc.players.playerservices.getPlayers",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "navestockccapi.player.updatePlayer" : {
+      "path" : "editPlayer/{idPlyer}/{Frstname}/{LstName}/{emailaddr}",
+      "httpMethod" : "PUT",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com" ],
+      "clientIds" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com", "replace this with your Android client ID", "replace this with your iOS client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.navestockcc.players.playerservices.editPlayer",
+      "request" : {
+        "parameters" : {
+          "idPlyer" : {
+            "type" : "int32",
+            "required" : true
+          },
+          "Frstname" : {
+            "type" : "string",
+            "required" : true
+          },
+          "LstName" : {
+            "type" : "string",
+            "required" : true
+          },
+          "emailaddr" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "navestockccapi.player.removePlayer" : {
+      "path" : "player/{idPlyer}",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com" ],
+      "clientIds" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com", "replace this with your Android client ID", "replace this with your iOS client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.navestockcc.players.playerservices.removePlayer",
+      "request" : {
+        "parameters" : {
+          "idPlyer" : {
+            "type" : "int32",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "navestockccapi.player.addPlayer" : {
+      "path" : "addPlayer",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com" ],
+      "clientIds" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com", "replace this with your Android client ID", "replace this with your iOS client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.navestockcc.players.playerservices.addPlayer",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "navestockccapi.match.updatePlayerScoreCard" : {
+      "path" : "void",
+      "httpMethod" : "PUT",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com" ],
+      "clientIds" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com", "replace this with your Android client ID", "replace this with your iOS client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.navestockcc.stats.ScoreCardService.updatePlayerScoreCard",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "navestockccapi.match.removePlayerFromScorecard" : {
+      "path" : "playerfromscorecard/{idMtch}/{idPlyr}",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com" ],
+      "clientIds" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com", "replace this with your Android client ID", "replace this with your iOS client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.navestockcc.stats.ScoreCardService.removePlayerFromScorecard",
+      "request" : {
+        "parameters" : {
+          "idMtch" : {
+            "type" : "int32",
+            "required" : true
+          },
+          "idPlyr" : {
+            "type" : "int32",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "navestockccapi.match.insertPlayerInScorecard" : {
+      "path" : "addPlayerToScorecard/{idMtch}/{idPlyr}/{idTm}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com" ],
+      "clientIds" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com", "replace this with your Android client ID", "replace this with your iOS client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.navestockcc.stats.ScoreCardService.addPlayerToScorecard",
+      "request" : {
+        "parameters" : {
+          "idMtch" : {
+            "type" : "int32",
+            "required" : true
+          },
+          "idPlyr" : {
+            "type" : "int32",
+            "required" : true
+          },
+          "idTm" : {
+            "type" : "int32",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "navestockccapi.match.scorecard" : {
+      "path" : "scorecardcollection/{matchid}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com" ],
+      "clientIds" : [ "763435628729-o1gpr621ras6vgeuk40dq87il8v9qrmi.apps.googleusercontent.com", "replace this with your Android client ID", "replace this with your iOS client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.navestockcc.stats.ScoreCardService.getScoreCard",
+      "request" : {
+        "parameters" : {
+          "matchid" : {
+            "type" : "int32",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "club" : {
+        "id" : "club",
+        "type" : "object",
+        "properties" : {
+          "idClub" : {
+            "type" : "integer"
+          },
+          "websiteaddress" : {
+            "type" : "string"
+          },
+          "clubName" : {
+            "type" : "string"
+          }
+        }
+      },
+      "ClubCollection" : {
+        "id" : "ClubCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "club"
+            }
+          }
+        }
+      },
+      "team" : {
+        "id" : "team",
+        "type" : "object",
+        "properties" : {
+          "idClub" : {
+            "type" : "integer"
+          },
+          "websiteaddress" : {
+            "type" : "string"
+          },
+          "teamId" : {
+            "type" : "integer"
+          },
+          "teamName" : {
+            "type" : "string"
+          },
+          "clubName" : {
+            "type" : "string"
+          }
+        }
+      },
+      "TeamCollection" : {
+        "id" : "TeamCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "team"
+            }
+          }
+        }
+      },
+      "Fixture" : {
+        "id" : "Fixture",
+        "type" : "object",
+        "properties" : {
+          "matchId" : {
+            "type" : "integer"
+          },
+          "navestockTeamId" : {
+            "type" : "integer"
+          },
+          "navestockTeamName" : {
+            "type" : "string"
+          },
+          "oppositionTeamId" : {
+            "type" : "integer"
+          },
+          "oppositionTeamName" : {
+            "type" : "string"
+          },
+          "matchType" : {
+            "type" : "string"
+          },
+          "homeOrAway" : {
+            "type" : "string"
+          },
+          "matchDate" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "matchStartTime" : {
+            "type" : "string"
+          },
+          "idGround" : {
+            "type" : "integer"
+          },
+          "groundName" : {
+            "type" : "string"
+          },
+          "groundAddress1" : {
+            "type" : "string"
+          },
+          "groundAddress2" : {
+            "type" : "string"
+          },
+          "groundAddressTown" : {
+            "type" : "string"
+          },
+          "groundAddressCounty" : {
+            "type" : "string"
+          },
+          "groundPostCode" : {
+            "type" : "string"
+          },
+          "idWinningTeam" : {
+            "type" : "integer"
+          },
+          "winningTeamName" : {
+            "type" : "string"
+          },
+          "resultDescription" : {
+            "type" : "string"
+          },
+          "navestockRuns" : {
+            "type" : "integer"
+          },
+          "navestockWickets" : {
+            "type" : "integer"
+          },
+          "oppositionRuns" : {
+            "type" : "integer"
+          },
+          "oppositionWickets" : {
+            "type" : "integer"
+          },
+          "fixtureStatus" : {
+            "type" : "string"
+          }
+        }
+      },
+      "FixtureCollection" : {
+        "id" : "FixtureCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Fixture"
+            }
+          }
+        }
+      },
+      "MatchReport" : {
+        "id" : "MatchReport",
+        "type" : "object",
+        "properties" : {
+          "report" : {
+            "type" : "string"
+          },
+          "createdby" : {
+            "type" : "string"
+          },
+          "reportId" : {
+            "type" : "integer"
+          },
+          "matchId" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "player" : {
+        "id" : "player",
+        "type" : "object",
+        "properties" : {
+          "idPlayer" : {
+            "type" : "integer"
+          },
+          "emailaddress" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "lastName" : {
+            "type" : "string"
+          },
+          "nickName" : {
+            "type" : "string"
+          },
+          "firstname" : {
+            "type" : "string"
+          }
+        }
+      },
+      "PlayerCollection" : {
+        "id" : "PlayerCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "player"
+            }
+          }
+        }
+      },
+      "ScoreCard" : {
+        "id" : "ScoreCard",
+        "type" : "object",
+        "properties" : {
+          "idClub" : {
+            "type" : "integer"
+          },
+          "clubName" : {
+            "type" : "string"
+          },
+          "teamId" : {
+            "type" : "integer"
+          },
+          "teamName" : {
+            "type" : "string"
+          },
+          "idPlayer" : {
+            "type" : "integer"
+          },
+          "firstname" : {
+            "type" : "string"
+          },
+          "lastname" : {
+            "type" : "string"
+          },
+          "batingOrder" : {
+            "type" : "integer"
+          },
+          "runsScored" : {
+            "type" : "integer"
+          },
+          "idHowOut" : {
+            "type" : "integer"
+          },
+          "howOutDescription" : {
+            "type" : "string"
+          },
+          "oversBowled" : {
+            "type" : "integer"
+          },
+          "wickets" : {
+            "type" : "integer"
+          },
+          "runsConseded" : {
+            "type" : "integer"
+          },
+          "idMatch" : {
+            "type" : "integer"
+          },
+          "objServiceSaved" : {
+            "type" : "boolean"
+          },
+          "objServiceDB" : {
+            "type" : "boolean"
+          },
+          "objServiceDBAction" : {
+            "type" : "integer"
+          },
+          "player" : {
+            "type" : "string"
+          }
+        }
+      },
+      "ScoreCardCollection" : {
+        "id" : "ScoreCardCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "ScoreCard"
+            }
+          }
+        }
+      }
+    },
+    "methods" : {
+      "com.nacestockcc.clubsteams.ClubServices.ClubAll" : {
+        "response" : {
+          "$ref" : "ClubCollection"
+        }
+      },
+      "com.nacestockcc.clubsteams.ClubServices.getClub" : {
+        "response" : {
+          "$ref" : "club"
+        }
+      },
+      "com.nacestockcc.clubsteams.ClubServices.TeamAll" : {
+        "response" : {
+          "$ref" : "TeamCollection"
+        }
+      },
+      "com.nacestockcc.clubsteams.ClubServices.TeamPerClub" : {
+        "response" : {
+          "$ref" : "TeamCollection"
+        }
+      },
+      "com.navestockcc.fixtures.FixtureServices.FixtureServicesFixture" : {
+        "response" : {
+          "$ref" : "Fixture"
+        }
+      },
+      "com.navestockcc.fixtures.FixtureServices.updateResult" : {
+        "request" : {
+          "$ref" : "Fixture"
+        },
+        "response" : {
+          "$ref" : "Fixture"
+        }
+      },
+      "com.navestockcc.fixtures.FixtureServices.FixtureServicesAll" : {
+        "response" : {
+          "$ref" : "FixtureCollection"
+        }
+      },
+      "com.navestockcc.matchreport.MatchReportService.addMatchReport" : {
+      },
+      "com.navestockcc.matchreport.MatchReportService.getMatchReport" : {
+        "response" : {
+          "$ref" : "MatchReport"
+        }
+      },
+      "com.navestockcc.players.playerservices.getPlayers" : {
+        "response" : {
+          "$ref" : "PlayerCollection"
+        }
+      },
+      "com.navestockcc.players.playerservices.editPlayer" : {
+      },
+      "com.navestockcc.players.playerservices.removePlayer" : {
+      },
+      "com.navestockcc.players.playerservices.addPlayer" : {
+        "request" : {
+          "$ref" : "player"
+        }
+      },
+      "com.navestockcc.stats.ScoreCardService.updatePlayerScoreCard" : {
+        "request" : {
+          "$ref" : "ScoreCard"
+        }
+      },
+      "com.navestockcc.stats.ScoreCardService.removePlayerFromScorecard" : {
+      },
+      "com.navestockcc.stats.ScoreCardService.addPlayerToScorecard" : {
+      },
+      "com.navestockcc.stats.ScoreCardService.getScoreCard" : {
+        "response" : {
+          "$ref" : "ScoreCardCollection"
+        }
+      }
+    }
+  }
+}

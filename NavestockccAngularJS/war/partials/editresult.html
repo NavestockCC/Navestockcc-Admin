@@ -1,0 +1,100 @@
+<button style="margin-bottom: 20px;" class="btn btn-default" type="submit" ui-sref="matchlist">Back to home</button>
+
+
+<div>
+	<h4>{{match.navestockTeamName + " - " + match.oppositionTeamName}}</h4>
+	<h5>{{match.matchDate | date: 'd MMMM yyyy'}}</h5>
+</div>
+
+	<div class="jumbotron">
+		<h4>Result description:</h4>
+		<div ng-show="resultTeam.idTeamWinning == -3">
+			Fixture drawn<br>
+			{{match.navestockTeamName}} {{match.navestockRuns}}/{{match.navestockWickets}} v {{match.oppositionTeamName}} {{match.oppositionRuns}}/{{match.oppositionWickets}}
+		</div>
+
+		<div ng-show="resultTeam.idTeamWinning == -1">
+			{{resultTeam.name}} {{match.resultDescription}}
+		</div>
+
+		<div ng-show="resultTeam.idTeamWinning == -2">
+			{{resultTeam.name}} {{match.resultDescription}}
+		</div>
+	
+		<div ng-show="resultTeam.idTeamWinning > 0">
+			{{resultTeam.name}} won by {{match.resultDescription}}<br>
+			{{match.navestockTeamName}} {{match.navestockRuns}}/{{match.navestockWickets}} v {{match.oppositionTeamName}} {{match.oppositionRuns}}/{{match.oppositionWickets}}
+		</div>
+	</div>
+
+<div class="well">
+	<form class="form-inline" role="form">
+	   <div class="container-fluid">
+		 <div class="well">	
+		 	<div class="row">
+				<div class="input-group">
+			   		 <h4>Match Info:</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-group">
+					<span class="input-group-addon">Winning Team</span>
+			   		<select ng-model="resultTeam"  ng-options="winningteam as winningteam.name for winningteam in winningteams" class="form-control input-sm"></select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-group">
+					<span class="input-group-addon">Result Description</span>
+			   		 <input ng-model="match.resultDescription" type="text" class="form-control input-sm">
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-group">
+					<span class="input-group-addon">Match Format</span>
+			   		 <input ng-model="match.matchType" type="text" class="form-control input-sm">
+				</div>
+			</div>
+		</div>	
+		<div class="well">	
+			<div class="row">
+				<div class="input-group">
+			   		 <h4>Navestock:</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-group">
+					<span class="input-group-addon">Runs</span>
+			   		 <input ng-model="match.navestockRuns" type="number" min="0" class="form-control input-sm">
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon">Wickets</span>
+			   		 <input ng-model="match.navestockWickets" type="number" min="0" max="10" class="form-control input-sm">
+				</div>
+		   	</div>		
+			</div>
+			<div class="well">	
+				<div class="row">
+					<div class="input-group">
+			   			<h4>Opposition:</h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-group">
+						<span class="input-group-addon">Runs</span>
+			   		 	<input ng-model="match.oppositionRuns" type="number" min="0" class="form-control input-sm">
+					</div>
+				<div class="input-group">
+					<span class="input-group-addon">Wickets</span>
+			   		 <input ng-model="match.oppositionWickets" type="number" min="0" max="10" class="form-control input-sm">
+				</div>
+		   </div>		
+			</div>
+			<div class="row">
+				<div class="input-group">
+					<button style="margin-top: 20px;" ng-click="submitEdit(resultTeam, match)" class="btn btn-primary"">Update</button>			
+				</div>
+			</div>
+			
+		</div>
+	</form>	
+</div>

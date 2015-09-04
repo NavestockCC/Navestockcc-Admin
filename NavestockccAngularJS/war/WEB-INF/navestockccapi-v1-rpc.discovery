@@ -1,0 +1,701 @@
+{
+ "kind": "discovery#rpcDescription",
+ "etag": "\"u_zXkMELIlX4ktyNbM2XKD4vK8E/rJ5Xw-_7Q-jFQVVv9TwVfxW4OhA\"",
+ "discoveryVersion": "v1",
+ "id": "navestockccapi:v1",
+ "name": "navestockccapi",
+ "version": "v1",
+ "description": "An API to manage Navestock Cricket Club",
+ "ownerDomain": "navestockcc-002.appspot.com",
+ "ownerName": "navestockcc-002.appspot.com",
+ "icons": {
+  "x16": "http://www.google.com/images/icons/product/search-16.gif",
+  "x32": "http://www.google.com/images/icons/product/search-32.gif"
+ },
+ "protocol": "rpc",
+ "rootUrl": "https://navestockcc-002.appspot.com/_ah/api/",
+ "rpcUrl": "https://navestockcc-002.appspot.com/_ah/api/rpc",
+ "rpcPath": "/_ah/api/rpc",
+ "parameters": {
+  "alt": {
+   "type": "string",
+   "description": "Data format for the response.",
+   "default": "json",
+   "enum": [
+    "json"
+   ],
+   "enumDescriptions": [
+    "Responses with Content-Type of application/json"
+   ],
+   "location": "query"
+  },
+  "fields": {
+   "type": "string",
+   "description": "Selector specifying which fields to include in a partial response.",
+   "location": "query"
+  },
+  "key": {
+   "type": "string",
+   "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+   "location": "query"
+  },
+  "oauth_token": {
+   "type": "string",
+   "description": "OAuth 2.0 token for the current user.",
+   "location": "query"
+  },
+  "prettyPrint": {
+   "type": "boolean",
+   "description": "Returns response with indentations and line breaks.",
+   "default": "true",
+   "location": "query"
+  },
+  "quotaUser": {
+   "type": "string",
+   "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.",
+   "location": "query"
+  },
+  "userIp": {
+   "type": "string",
+   "description": "IP address of the site where the request originates. Use this if you want to enforce per-user limits.",
+   "location": "query"
+  }
+ },
+ "auth": {
+  "oauth2": {
+   "scopes": {
+    "https://www.googleapis.com/auth/userinfo.email": {
+     "description": "View your email address"
+    }
+   }
+  }
+ },
+ "schemas": {
+  "ClubCollection": {
+   "id": "ClubCollection",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "club"
+     }
+    }
+   }
+  },
+  "Fixture": {
+   "id": "Fixture",
+   "type": "object",
+   "properties": {
+    "fixtureStatus": {
+     "type": "string"
+    },
+    "groundAddress1": {
+     "type": "string"
+    },
+    "groundAddress2": {
+     "type": "string"
+    },
+    "groundAddressCounty": {
+     "type": "string"
+    },
+    "groundAddressTown": {
+     "type": "string"
+    },
+    "groundName": {
+     "type": "string"
+    },
+    "groundPostCode": {
+     "type": "string"
+    },
+    "homeOrAway": {
+     "type": "string"
+    },
+    "idGround": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "idWinningTeam": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "matchDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "matchId": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "matchStartTime": {
+     "type": "string"
+    },
+    "matchType": {
+     "type": "string"
+    },
+    "navestockRuns": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "navestockTeamId": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "navestockTeamName": {
+     "type": "string"
+    },
+    "navestockWickets": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "oppositionRuns": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "oppositionTeamId": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "oppositionTeamName": {
+     "type": "string"
+    },
+    "oppositionWickets": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "resultDescription": {
+     "type": "string"
+    },
+    "winningTeamName": {
+     "type": "string"
+    }
+   }
+  },
+  "FixtureCollection": {
+   "id": "FixtureCollection",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "Fixture"
+     }
+    }
+   }
+  },
+  "MatchReport": {
+   "id": "MatchReport",
+   "type": "object",
+   "properties": {
+    "createdby": {
+     "type": "string"
+    },
+    "matchId": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "report": {
+     "type": "string"
+    },
+    "reportId": {
+     "type": "integer",
+     "format": "int32"
+    }
+   }
+  },
+  "PlayerCollection": {
+   "id": "PlayerCollection",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "player"
+     }
+    }
+   }
+  },
+  "ScoreCard": {
+   "id": "ScoreCard",
+   "type": "object",
+   "properties": {
+    "batingOrder": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "clubName": {
+     "type": "string"
+    },
+    "firstname": {
+     "type": "string"
+    },
+    "howOutDescription": {
+     "type": "string"
+    },
+    "idClub": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "idHowOut": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "idMatch": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "idPlayer": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "lastname": {
+     "type": "string"
+    },
+    "objServiceDB": {
+     "type": "boolean"
+    },
+    "objServiceDBAction": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "objServiceSaved": {
+     "type": "boolean"
+    },
+    "oversBowled": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "player": {
+     "type": "string"
+    },
+    "runsConseded": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "runsScored": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "teamId": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "teamName": {
+     "type": "string"
+    },
+    "wickets": {
+     "type": "integer",
+     "format": "int32"
+    }
+   }
+  },
+  "ScoreCardCollection": {
+   "id": "ScoreCardCollection",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "ScoreCard"
+     }
+    }
+   }
+  },
+  "TeamCollection": {
+   "id": "TeamCollection",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "team"
+     }
+    }
+   }
+  },
+  "club": {
+   "id": "club",
+   "type": "object",
+   "properties": {
+    "clubName": {
+     "type": "string"
+    },
+    "idClub": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "websiteaddress": {
+     "type": "string"
+    }
+   }
+  },
+  "player": {
+   "id": "player",
+   "type": "object",
+   "properties": {
+    "emailaddress": {
+     "type": "string"
+    },
+    "firstname": {
+     "type": "string"
+    },
+    "idPlayer": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "lastName": {
+     "type": "string"
+    },
+    "name": {
+     "type": "string"
+    },
+    "nickName": {
+     "type": "string"
+    }
+   }
+  },
+  "team": {
+   "id": "team",
+   "type": "object",
+   "properties": {
+    "clubName": {
+     "type": "string"
+    },
+    "idClub": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "teamId": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "teamName": {
+     "type": "string"
+    },
+    "websiteaddress": {
+     "type": "string"
+    }
+   }
+  }
+ },
+ "methods": {
+  "navestockccapi.club.all": {
+   "id": "navestockccapi.club.all",
+   "allowGet": true,
+   "returns": {
+    "$ref": "ClubCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "navestockccapi.club.allTeams": {
+   "id": "navestockccapi.club.allTeams",
+   "allowGet": true,
+   "returns": {
+    "$ref": "TeamCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "navestockccapi.club.getclub": {
+   "id": "navestockccapi.club.getclub",
+   "allowGet": true,
+   "parameters": {
+    "clubId": {
+     "type": "integer",
+     "required": true,
+     "format": "int32"
+    }
+   },
+   "parameterOrder": [
+    "clubId"
+   ],
+   "returns": {
+    "$ref": "club"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "navestockccapi.club.teamsPerClub": {
+   "id": "navestockccapi.club.teamsPerClub",
+   "allowGet": true,
+   "parameters": {
+    "clubId": {
+     "type": "integer",
+     "required": true,
+     "format": "int32"
+    }
+   },
+   "parameterOrder": [
+    "clubId"
+   ],
+   "returns": {
+    "$ref": "TeamCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "navestockccapi.match.all": {
+   "id": "navestockccapi.match.all",
+   "allowGet": true,
+   "parameters": {
+    "matchYear": {
+     "type": "string",
+     "required": true
+    },
+    "teamId": {
+     "type": "integer",
+     "required": true,
+     "format": "int32"
+    }
+   },
+   "parameterOrder": [
+    "teamId",
+    "matchYear"
+   ],
+   "returns": {
+    "$ref": "FixtureCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "navestockccapi.match.get": {
+   "id": "navestockccapi.match.get",
+   "allowGet": true,
+   "parameters": {
+    "matchid": {
+     "type": "integer",
+     "required": true,
+     "format": "int32"
+    }
+   },
+   "parameterOrder": [
+    "matchid"
+   ],
+   "returns": {
+    "$ref": "Fixture"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "navestockccapi.match.insertPlayerInScorecard": {
+   "id": "navestockccapi.match.insertPlayerInScorecard",
+   "parameters": {
+    "idMtch": {
+     "type": "integer",
+     "required": true,
+     "format": "int32"
+    },
+    "idPlyr": {
+     "type": "integer",
+     "required": true,
+     "format": "int32"
+    },
+    "idTm": {
+     "type": "integer",
+     "required": true,
+     "format": "int32"
+    }
+   },
+   "parameterOrder": [
+    "idMtch",
+    "idPlyr",
+    "idTm"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "navestockccapi.match.removePlayerFromScorecard": {
+   "id": "navestockccapi.match.removePlayerFromScorecard",
+   "parameters": {
+    "idMtch": {
+     "type": "integer",
+     "required": true,
+     "format": "int32"
+    },
+    "idPlyr": {
+     "type": "integer",
+     "required": true,
+     "format": "int32"
+    }
+   },
+   "parameterOrder": [
+    "idMtch",
+    "idPlyr"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "navestockccapi.match.scorecard": {
+   "id": "navestockccapi.match.scorecard",
+   "allowGet": true,
+   "parameters": {
+    "matchid": {
+     "type": "integer",
+     "required": true,
+     "format": "int32"
+    }
+   },
+   "parameterOrder": [
+    "matchid"
+   ],
+   "returns": {
+    "$ref": "ScoreCardCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "navestockccapi.match.updatePlayerScoreCard": {
+   "id": "navestockccapi.match.updatePlayerScoreCard",
+   "parameters": {
+    "resource": {
+     "$ref": "ScoreCard"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "navestockccapi.match.updateresult": {
+   "id": "navestockccapi.match.updateresult",
+   "parameters": {
+    "resource": {
+     "$ref": "Fixture"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "Fixture"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "navestockccapi.matchReport.add": {
+   "id": "navestockccapi.matchReport.add",
+   "parameters": {
+    "idMatch": {
+     "type": "integer",
+     "required": true,
+     "format": "int32"
+    },
+    "matchReport": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "matchReport",
+    "idMatch"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "navestockccapi.matchReport.get": {
+   "id": "navestockccapi.matchReport.get",
+   "allowGet": true,
+   "parameters": {
+    "matchid": {
+     "type": "integer",
+     "required": true,
+     "format": "int32"
+    }
+   },
+   "parameterOrder": [
+    "matchid"
+   ],
+   "returns": {
+    "$ref": "MatchReport"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "navestockccapi.player.addPlayer": {
+   "id": "navestockccapi.player.addPlayer",
+   "parameters": {
+    "resource": {
+     "$ref": "player"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "navestockccapi.player.playerlist": {
+   "id": "navestockccapi.player.playerlist",
+   "allowGet": true,
+   "returns": {
+    "$ref": "PlayerCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "navestockccapi.player.removePlayer": {
+   "id": "navestockccapi.player.removePlayer",
+   "parameters": {
+    "idPlyer": {
+     "type": "integer",
+     "required": true,
+     "format": "int32"
+    }
+   },
+   "parameterOrder": [
+    "idPlyer"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "navestockccapi.player.updatePlayer": {
+   "id": "navestockccapi.player.updatePlayer",
+   "parameters": {
+    "Frstname": {
+     "type": "string",
+     "required": true
+    },
+    "LstName": {
+     "type": "string",
+     "required": true
+    },
+    "emailaddr": {
+     "type": "string",
+     "required": true
+    },
+    "idPlyer": {
+     "type": "integer",
+     "required": true,
+     "format": "int32"
+    }
+   },
+   "parameterOrder": [
+    "idPlyer",
+    "Frstname",
+    "LstName",
+    "emailaddr"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  }
+ }
+}

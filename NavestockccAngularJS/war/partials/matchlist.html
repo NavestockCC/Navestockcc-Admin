@@ -1,0 +1,48 @@
+<div ng-controller="Navestockcc-Admin.Controller.Match.List">
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Match Admin:</a>
+    </div>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+			<li ng-class="{active: teamidNav==1}"><a ng-click="getTeamMatchTeamIdList(1)">Sunday Team</a></li>
+			<li ng-class="{active: teamidNav==2}"><a ng-click="getTeamMatchTeamIdList(2)">1st Team</a></li>
+			<li ng-class="{active: teamidNav==5}"><a ng-click="getTeamMatchTeamIdList(5)">2nd Team</a></li>
+			<li ng-class="{active: teamidNav==7}"><a ng-click="getTeamMatchTeamIdList(7)">Colts U15</a></li>
+			<li ng-class="{active: teamidNav==55}"><a ng-click="getTeamMatchTeamIdList(55)">Colts U13</a></li>
+	  </ul>		
+      <ul class="nav navbar-nav navbar-right">
+      	<li class="dropdown">
+		  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Year<span class="caret"></span></a>
+          <ul class="dropdown-menu">	
+			<li ng-class="{active: yearNav==2014}"><a ng-click="getTeamMatchDateList('2014')">2014</a></li>
+    		<li ng-class="{active: yearNav==2015}"><a ng-click="getTeamMatchDateList('2015')">2015</a></li>
+    		<li ng-class="{active: yearNav==2016}"><a ng-click="getTeamMatchDateList('2016')">2016</a></li>
+    		<li ng-class="{active: yearNav==2017}"><a ng-click="getTeamMatchDateList('2017')">2017</a></li>
+    		<li ng-class="{active: yearNav==2018}"><a ng-click="getTeamMatchDateList('2018')">2018</a></li>
+    		<li ng-class="{active: yearNav==2019}"><a ng-click="getTeamMatchDateList('2019')">2019</a></li>
+    		<li ng-class="{active: yearNav==2020}"><a ng-click="getTeamMatchDateList('2020')">2020</a></li>
+     	  </ul>
+     	</li>
+     </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="well" ng-repeat="match in matchlists">
+	<p>{{match.navestockTeamName}} v {{match.oppositionTeamName}}<br>
+	{{match.matchDate | date : format : short}} {{match.matchStartTime}}<br>
+	{{match.resultDescription}}
+	<p>
+<a ui-sref="editmatch({mid: match.matchId})">Edit match result</a> - <a ui-sref="scorecard({mid: match.matchId})">Edit Scorecard</a>	
+</div>
+</div>

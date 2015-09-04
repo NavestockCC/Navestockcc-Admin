@@ -1,0 +1,9 @@
+
+<button style="margin-bottom: 20px;" class="btn btn-default" type="submit" ui-sref="add">Add Contact</button>
+<div class="well">
+	<p>{{match.report}}</p>
+	<h3>{{match.createdby}}</h3>
+	<h3>{{match.matchId}}</h3>
+	<h3>{{match.reportId}}</h3>
+	<a href="" ui-sref="edit({ mid: match.matchId })">Edit this contact</a> - <a href="" ng-click="remove(contact)">Remove this contact</a>
+</div>

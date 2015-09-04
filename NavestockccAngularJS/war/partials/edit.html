@@ -1,0 +1,32 @@
+<button style="margin-bottom: 20px;" class="btn btn-default" type="submit" ui-sref="matchlist">Back to home</button>
+
+<form class="form-horizontal" ng-submit="submitEdit()" name="editContact">
+<fieldset>
+
+<p>Match Id</p>
+<!-- Text input-->
+<div class="input-group">
+  <input ng-model="match.matchId" name="matchId" type="text" required class="form-control input-md">
+</div>
+
+<p>Report Id</p>
+<!-- Text input-->
+<div class="input-group">
+  <input ng-model="match.reportId" name="matchId" type="text" required class="form-control input-md">
+</div>
+
+<p>Created By</p>
+<!-- Text input-->
+<div class="input-group">
+  <input ng-model="match.createdby" name="createdby" type="text" required class="form-control input-md">
+</div>
+
+<p>Report</p>
+<!-- Text input-->
+<div class="input-group">
+  <input ng-model="match.report" name="report" type="text" required class="form-control input-md">
+</div>
+
+<button style="margin-top: 20px;" type="submit" class="btn btn-white btn-rad btn-trans" ng-class="{'disabled' : !editContact.$valid}">Validate</button>
+</fieldset>
+</form>

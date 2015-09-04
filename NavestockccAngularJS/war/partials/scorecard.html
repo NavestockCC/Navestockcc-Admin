@@ -1,0 +1,74 @@
+<div ng-controller="Navestockcc-Admin.Controller.Match.Scorecard">
+
+<div>
+	<h4>{{match.navestockTeamName + " - " + match.oppositionTeamName}}</h4>
+	<h5>{{match.matchDate | date: 'd MMMM yyyy'}}</h5>
+</div>
+<div class="well" >	
+		<div class="input-group">
+		<p>Add new player details to data base:</p>
+		<input type="text" placeholder="First name" class="form-control" ng-model="newPlayertoAdd.firstname">
+		<input type="text" placeholder="Last name" class="form-control" ng-model="newPlayertoAdd.lastName">
+		<input type="text" placeholder="Nick name" class="form-control" ng-model="newPlayertoAdd.nickName">
+		<input type="email" placeholder="email address" class="form-control" ng-model="newPlayertoAdd.emailaddress"><br>
+		<a class="btn btn-primary" ng-click="submitnewAddPlayertoDB(newPlayertoAdd)">Add <span class="glyphicon glyphicon-upload"></span></a>
+	</div>
+	<br>	
+	<div class="input-group">
+		<p>Add Player to Team</p>
+		<select class="form-control" placeholder="Select palyer"  ng-options="player as player.name for player in listofplayers" ng-model="selectedplayer"></select><br>
+		<a class="btn btn-primary" ng-click="submitAddPlayertoTeam(selectedplayer)">Update <span class="glyphicon glyphicon-upload"></span></a>
+	</div>
+</div>
+
+
+<div class="well" >
+	<form class="form-inline" role="form">
+	<div><b>Batting Stats:</b></div>
+	<div class="container-fluid">
+		<div class="row" ng-repeat="scorecard in scorecardlist">
+			<div class="col-sm-2 input-group"><h5>{{scorecard.player}}</h5></div>
+			<div class="col-sm-2 input-group">
+			   <span class="input-group-addon">Batting #:</span>
+			   <input class="form-control input-sm" type="number" min="1" max="11" ng-model="scorecard.batingOrder">
+			  </div>
+			<div class="col-sm-2 input-group">
+				<span class="input-group-addon">How out:</span>
+				<select class="form-control input-sm" placeholder="How out"  ng-model="scorecard.idHowOut">
+					<option ng-repeat="howout in howoutlist" value="{{howout.idHowOut}}" ng-selected="howout.idHowOut == scorecard.idHowOut">{{howout.HowOutDescription}}</option>
+				</select>
+				</div>
+			<div class="col-sm-2 input-group">
+				<span class="input-group-addon">Runs</span>
+				<input class="form-control input-sm" type="number" min="0" placeholder="Runs"  ng-model="scorecard.runsScored">
+				</div>
+			<div class="col-sm-3 input-group"><a class="btn btn-primary" ng-show="scorecard.objServiceSaved" ng-click="updatePlayerScorecard($index)">Save <span class="glyphicon glyphicon-save"></span></a><a class="btn btn-danger" ng-show="scorecard.objServiceSaved" ng-click="removePlayerScorecard($index, scorecard.idPlayer)">Remove <span class="glyphicon glyphicon-trash"></span></a><label class="btn btn-warning" ng-show="!scorecard.objServiceSaved">Please wait updating record...</label></div>
+		</div>
+	</div>
+	</form>
+</div>
+
+<div class="well">	
+	<div><b>Bowling Stats:</b></div>
+	<form class="form-inline" role="form">
+		<div class="row" ng-repeat="scorecard in scorecardlist">
+			<div class="col-sm-2 input-group"><h5>{{scorecard.player}}</h5></div>
+			<div class="col-sm-2 input-group">
+        		<span class="input-group-addon">Overs:</span>
+        		<input class="form-control input-sm" type="number" min="0" placeholder="Overs"  ng-model="scorecard.oversBowled">
+        		</div>
+			<div class="col-sm-2 input-group">
+				<span class="input-group-addon">Wickets:</span>
+				<input class="form-control input-sm" type="number" min="0" placeholder="Wickets"  ng-model="scorecard.wickets">
+				</div>
+			<div class="col-sm-2 input-group">
+				<span class="input-group-addon">Runs:</span>
+				<input class="form-control input-sm" type="number" min="0" placeholder="Runs"  ng-model="scorecard.runsConseded">
+				</div>
+			<div class="col-sm-3 input-group"><a class="btn btn-primary" ng-show="scorecard.objServiceSaved" ng-click="updatePlayerScorecard($index)">Save <span class="glyphicon glyphicon-save"></span></a><a class="btn btn-danger" ng-show="scorecard.objServiceSaved" ng-click="removePlayerScorecard($index, scorecard.idPlayer)">Remove <span class="glyphicon glyphicon-trash"></span></a><label class="btn btn-warning" ng-show="!scorecard.objServiceSaved">Please wait updating record...</label></div>
+		</div>	
+	</form>
+	</div>	
+</div>
+
+</div>

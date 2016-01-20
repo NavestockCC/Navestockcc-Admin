@@ -33,7 +33,7 @@ public class NavestockDbConnection {
               // Local MySQL instance to use during development.
 				Class.forName("com.mysql.jdbc.Driver");
 			  url = "jdbc:mysql://173.194.255.10:3306/navestockdb";
-			  conn = DriverManager.getConnection(url, "root", "Nav1768");
+			  conn = DriverManager.getConnection(url, "*****", "*******");
 		}		
 	} catch (ClassNotFoundException | SQLException e) {
 		e.printStackTrace();
